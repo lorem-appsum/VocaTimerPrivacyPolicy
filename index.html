@@ -39,6 +39,10 @@
     .app-icon {
       width: 48px;
       height: 48px;
+      object-fit: contain;
+      filter: none;
+      mix-blend-mode: normal;
+      image-rendering: auto;
     }
     h1, h2 {
       color: var(--accent);
@@ -93,7 +97,7 @@
 
     <section class="panel">
       <h2>2. Data We Process (with Opt-Out)</h2>
-      <p>Enabled by default; you can disable in the app Settings ("Share anonymous usage data"). When disabled, collection stops and analytics data can be reset.</p>
+      <p>Enabled by default; you can disable in the app Settings ("Share anonymous usage data"). When disabled, collection stops and the Analytics instance ID is reset.</p>
       <ul>
         <li><strong>Crash reports:</strong> via Firebase Crashlytics.</li>
         <li><strong>Performance data:</strong> startup, rendering, network metrics via Firebase Performance.</li>
@@ -114,9 +118,10 @@
     <section class="panel">
       <h2>4. Permissions</h2>
       <ul>
-        <li><strong>Microphone:</strong> to record voice notes for alarms.</li>
-        <li><strong>Storage/files (optional):</strong> to save recordings or imported sounds.</li>
+        <li><strong>Microphone:</strong> to record voice notes for alarms (stored locally only).</li>
         <li><strong>Notifications/alarms:</strong> to deliver timers and alerts.</li>
+        <li><strong>Exact alarms (Android 12+):</strong> to schedule precise alarms as a fail-safe.</li>
+        <li><strong>Storage/files (optional):</strong> to save recordings or imported sounds.</li>
       </ul>
       <p>Permissions are used only for core functionality.</p>
     </section>
@@ -129,13 +134,14 @@
     <section class="panel">
       <h2>6. Data Sharing</h2>
       <p>Analytics/diagnostics and billing metadata are shared with Google (Firebase, Google Play Services, Google Play Billing) to operate these services. Voice recordings are not shared.</p>
+      <p>We do not sell data. No targeted ads.</p>
     </section>
 
     <section class="panel">
       <h2>7. Security & Retention</h2>
       <ul>
         <li>Telemetry uses encrypted transport provided by Google Play Services.</li>
-        <li>Retention follows Firebase defaults. You can opt out at any time; we can reset the Analytics instance ID on opt-out.</li>
+        <li>Retention follows Firebase defaults. You can opt out at any time; the Analytics instance ID is reset on opt-out.</li>
       </ul>
     </section>
 
